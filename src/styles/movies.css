@@ -1,0 +1,210 @@
+/* =====================================================
+   MOVIE SECTION
+===================================================== */
+
+.movie-section {
+  margin-top: 45px;
+
+  padding: 0 40px;
+}
+
+.section-title {
+  position: relative;
+
+  margin-bottom: 20px;
+
+  padding-left: 13px;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.section-title::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 3px;
+
+  width: 4px;
+  height: 23px;
+
+  border-radius: 10px;
+
+  background: var(--accent);
+
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.4);
+}
+
+
+/* =====================================================
+   MOVIE ROW
+===================================================== */
+
+.row-container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.movies-row {
+  width: 100%;
+
+  display: flex;
+
+  gap: 18px;
+
+  padding: 5px 6px 20px;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.movies-row::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =====================================================
+   MOVIE CARD
+===================================================== */
+
+.movie-card {
+  position: relative;
+
+  flex: 0 0 180px;
+
+  overflow: hidden;
+
+  background: var(--bg-card);
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.movie-card img {
+  display: block;
+
+  width: 100%;
+  height: 270px;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.3s ease;
+}
+
+.movie-card p {
+  padding: 12px 11px 14px;
+
+  color: #e7e7e9;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Hover */
+
+.movie-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.movie-card:hover img {
+  transform: scale(1.05);
+
+  filter: brightness(1.08);
+}
+
+
+/* Active */
+
+.movie-card.active-movie {
+  box-shadow:
+    0 0 0 2px var(--accent),
+    0 10px 30px rgba(229, 9, 20, 0.16);
+}
+
+
+/* =====================================================
+   ARROWS
+===================================================== */
+
+.arrow-btn {
+  position: absolute;
+
+  top: 43%;
+
+  transform: translateY(-50%);
+
+  z-index: 20;
+
+  width: 43px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 8px;
+
+  background: rgba(10, 11, 15, 0.92);
+
+  color: white;
+
+  font-size: 27px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.row-container:hover .arrow-btn {
+  opacity: 1;
+}
+
+.arrow-btn:hover {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  box-shadow: 0 5px 20px rgba(229, 9, 20, 0.25);
+}
+
+.left-arrow {
+  left: -12px;
+}
+
+.right-arrow {
+  right: -12px;
+}
+
+

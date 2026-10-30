@@ -1,0 +1,368 @@
+/* =====================================================
+   WATCHLIST PAGE
+===================================================== */
+
+.watchlist-page {
+  width: 100%;
+  max-width: 1550px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+/* -------------------------
+   Back Button
+------------------------- */
+
+.watchlist-page>button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 30px;
+  padding: 10px 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--bg-card);
+  color: var(--text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.watchlist-page>button:hover {
+  background: var(--bg-hover);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.14);
+  transform: translateX(-3px);
+}
+
+/* -------------------------
+   Watchlist Title
+------------------------- */
+
+.watchlist-page>h2 {
+  position: relative;
+
+  margin-bottom: 28px;
+  padding-left: 13px;
+
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.watchlist-page>h2::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 2px;
+
+  width: 4px;
+  height: 25px;
+
+  border-radius: 10px;
+
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(229, 9, 20, 0.4);
+}
+
+/* -------------------------
+   Watchlist Grid
+------------------------- */
+
+.watchlist-container {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill,
+      minmax(170px, 1fr));
+
+  gap: 30px 18px;
+}
+
+/* -------------------------
+   Watchlist Movie
+------------------------- */
+
+.watchlist-movie {
+  min-width: 0;
+
+  overflow: hidden;
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.watchlist-movie:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.watchlist-movie img {
+  display: block;
+
+  width: 100%;
+  height: 255px;
+
+  object-fit: cover;
+
+  background: #252730;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.3s ease;
+}
+
+.watchlist-movie:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.08);
+}
+
+/* -------------------------
+   Watchlist Movie Info
+------------------------- */
+
+.watchlist-movie h3 {
+  padding: 12px 11px 8px;
+
+  color: #e7e7e9;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* -------------------------
+   Remove Button
+------------------------- */
+
+.watchlist-movie button {
+  margin: 0 11px 13px;
+  padding: 8px 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+
+  background: #202229;
+  color: var(--text-secondary);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.watchlist-movie button:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+
+  box-shadow: 0 5px 18px rgba(229, 9, 20, 0.2);
+}
+
+/* -------------------------
+   Empty Watchlist
+------------------------- */
+
+.watchlist-page>p {
+  width: 100%;
+
+  padding: 70px 20px;
+
+  text-align: center;
+
+  color: var(--text-muted);
+
+  font-size: 15px;
+
+  background: var(--bg-secondary);
+
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+
+/* =====================================================
+   MODAL BUTTONS
+===================================================== */
+
+.modal-text button {
+  width: fit-content;
+
+  margin-top: 25px;
+  margin-right: 8px;
+
+  padding: 10px 15px;
+
+  border: 1px solid transparent;
+  border-radius: 7px;
+
+  background: var(--accent);
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.modal-text button:hover {
+  background: var(--accent-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 20px rgba(229, 9, 20, 0.25);
+}
+
+.modal-text button+button {
+  background: #252730;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.modal-text button+button:hover {
+  background: #30333c;
+  box-shadow: none;
+}
+
+
+/* =====================================================
+   WATCHLIST RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .watchlist-page {
+    padding: 35px 25px;
+  }
+
+  .watchlist-container {
+    grid-template-columns: repeat(auto-fill,
+        minmax(155px, 1fr));
+
+    gap: 25px 16px;
+  }
+
+  .watchlist-movie img {
+    height: 235px;
+  }
+}
+
+
+@media (max-width: 750px) {
+
+  .watchlist-page {
+    padding: 30px 20px;
+  }
+
+  .watchlist-page>h2 {
+    font-size: 21px;
+  }
+
+  .watchlist-container {
+    grid-template-columns: repeat(auto-fill,
+        minmax(140px, 1fr));
+
+    gap: 22px 13px;
+  }
+
+  .watchlist-movie img {
+    height: 210px;
+  }
+
+  .watchlist-movie h3 {
+    padding: 10px 9px 7px;
+    font-size: 12px;
+  }
+
+  .watchlist-movie button {
+    margin-left: 9px;
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .watchlist-page {
+    padding: 25px 15px;
+  }
+
+  .watchlist-page>button {
+    margin-bottom: 22px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .watchlist-page>h2 {
+    margin-bottom: 20px;
+    font-size: 19px;
+  }
+
+  .watchlist-page>h2::before {
+    height: 21px;
+  }
+
+  .watchlist-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px 10px;
+  }
+
+  .watchlist-movie img {
+    height: 200px;
+  }
+
+  .watchlist-movie h3 {
+    padding: 9px 8px 6px;
+    font-size: 11px;
+  }
+
+  .watchlist-movie button {
+    margin: 0 8px 9px;
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  .watchlist-page>p {
+    padding: 55px 15px;
+    font-size: 13px;
+  }
+
+  .modal-text button {
+    margin-top: 18px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,263 @@
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(8, 9, 12, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  min-height: 76px;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 35px;
+}
+
+
+/* -------------------------
+   Logo
+------------------------- */
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  color: white;
+
+  user-select: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+
+/* -------------------------
+   Navigation
+------------------------- */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  list-style: none;
+}
+
+.nav-links li {
+  position: relative;
+
+  color: var(--text-secondary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.nav-links li:hover {
+  color: white;
+}
+
+.nav-links li.active {
+  color: white;
+}
+
+.nav-links li.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -12px;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: var(--accent);
+
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.right-side {
+  display: flex;
+  align-items: center;
+}
+
+.search-container {
+  position: relative;
+  width: 330px;
+}
+
+.search-bar {
+  width: 100%;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  gap: 10px;
+
+  background: #15171d;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.search-bar:focus-within {
+  background: #181a21;
+
+  border-color: rgba(229, 9, 20, 0.7);
+
+  box-shadow:
+    0 0 0 3px rgba(229, 9, 20, 0.1),
+    0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  font-size: 15px;
+  opacity: 0.55;
+}
+
+.search-bar input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 13px;
+}
+
+.search-bar input::placeholder {
+  color: #686a73;
+}
+
+
+/* =====================================================
+   SEARCH DROPDOWN
+===================================================== */
+
+.suggestions-dropdown {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  left: 0;
+
+  width: 100%;
+
+  padding: 5px;
+
+  list-style: none;
+
+  background: #14161c;
+
+  border: 1px solid var(--border);
+
+  border-radius: 11px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.65),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+
+  overflow: hidden;
+
+  z-index: 300;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 9px;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background: #20232b;
+}
+
+.suggestion-img {
+  width: 42px;
+  height: 60px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 5px;
+
+  background: #252730;
+}
+
+.suggestion-info {
+  min-width: 0;
+}
+
+.suggestion-info h4 {
+  margin-bottom: 5px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggestion-info p {
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+
