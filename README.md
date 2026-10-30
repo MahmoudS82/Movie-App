@@ -1,35 +1,28 @@
-# FilmFlix
+# 🎬 Movie App
 
-A frontend-only React and Vite movie browser with trending, popular, and top-rated movies, search, movie details, and a browser-local watchlist.
+A movie browsing app built with React. Explore trending and popular movies and save your favorites to a watchlist.
 
-## Getting started
+## 🚀 Live Demo
 
-1. Run `npm install`.
-2. Copy `.env.example` to `.env.local`.
-3. Set `VITE_TMDB_API_KEY` to your TMDB API key.
-4. Run `npm run dev`.
+[View Movie App](https://movie-app123-delta.vercel.app/)
 
-The browser calls TMDB directly. No server, database, or authentication setup is required.
-Vite includes `VITE_*` variables in the public browser bundle. Use a TMDB key intended for this frontend app; never put database credentials or JWT secrets here.
+## ✨ Features
 
-Without a key, movie sections display setup instructions. Existing saved watchlists still work.
-Watchlists use the existing `watchlist` localStorage key and stay on the current browser/device.
-If storage is unavailable, the watchlist works in memory for the current session.
+- Browse trending and popular movies
+- View movie details
+- Add movies to your watchlist
 
-## Structure
+## 🛠️ Built With
 
-- `src/components/`: header, search, movie rows, cards, posters, details, and watchlist view.
-- `src/hooks/`: cancellable movie fetching and persistent watchlist state.
-- `src/services/movieApi.js`: TMDB requests, configuration, and error handling.
-- `src/styles/`: base, layout, movies, modal, and watchlist styles.
-- `src/App.jsx`: view switching and shared selection.
-- `src/index.css`: stylesheet imports.
+- React
+- JavaScript
+- CSS
+- TMDB API
 
-## Commands
+## 🧩 React Concepts Practiced
 
-- `npm run dev`: development server.
-- `npm run lint`: lint source.
-- `npm run build`: production build.
-- `npm run preview`: preview the production build.
-
-Deploy `dist/` to a static host. Set `VITE_TMDB_API_KEY` before building; changing it requires rebuilding.
+- State and props
+- Event handling
+- Fetching API data
+- Conditional rendering
+- Reusable components
